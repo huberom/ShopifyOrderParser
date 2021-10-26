@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Homc\\shopifyorderparser\\": "src/",
+            "Homc\\ShopifyOrderParser\\": "src/",
             "Tests\\Utilities\\": "tests/Utilities"
         }
     },
