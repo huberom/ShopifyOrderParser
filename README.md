@@ -73,3 +73,49 @@ $ids = $orders->map(function($order) {
     return $order['id'];
 });
 ```
+
+BatchOrderParser is fundamentally an extension of [Doctrine\Common\Collections\ArrayCollection](https://www.doctrine-project.org/projects/doctrine-collections/en/stable/index.html). Consequently, BatchOrderParser inherits all the methods of ArrayCollection. Feel free to click the link for a comprehensive list of these methods.
+
+
+### getNumberOfOrders
+Returns the number of orders.
+
+```php
+$parser->getNumberOfOrders(); // 30
+```
+
+### getOrderByKeyValue(string $key, $value)
+Get a Single Order Using Key/Value.
+
+Returns an `OrderCollection` instance.
+
+```php
+$parser->getOrderByKeyValue('checkout_id', 901414060);
+```
+
+### getOrdersByKeyValue(string $key, $value)
+Get Multiple Orders Using Key/Value.
+
+Returns a `BatchOrderParser` instance with new data.
+
+```php
+$parser->getOrdersByKeyValue('phone', '+557734881234');
+```
+
+### getOrderById(int $id)
+Get an order by its ID.
+
+Returns an `OrderCollection` instance.
+
+```php
+$parser->getOrderById(123456789);
+```
+
+### getOrdersByEmail(string $email)
+Get orders by email.
+
+Returns a `BatchOrderParser` instance with new data.
+
+```php
+$parser->getOrdersByEmail('test@example.com');
+```
